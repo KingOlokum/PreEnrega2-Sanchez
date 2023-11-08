@@ -1,0 +1,24 @@
+.navbar-container{
+    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    list-style-type: none;
+}
+.category-button{
+    background-color:transparent;
+    border: none;
+    color:black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
