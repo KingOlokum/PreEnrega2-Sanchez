@@ -1,10 +1,9 @@
+const ItemCount = ({stock, setCount, count}) => {
+    
 
-import { useState } from "react";
-const ItemCount = () => {
-    const [count, setCount] = useState(0);
-    const stock = 5;
+    
     const onAdd = () => {
-        if(count == stock) return;
+        if(count === stock) return;
         setCount(count+1);
     }
     const onSubtract = () => {
@@ -15,7 +14,7 @@ const ItemCount = () => {
     <div>
         <button onClick={onSubtract}>-</button>
         <span>{count}</span>
-        <button onClick={onAdd}>+</button>
+        {count === stock ? null : <button onClick={onAdd}>+</button> }
     </div>
   )
 }

@@ -17,8 +17,12 @@
 .category-button{
     background-color:transparent;
     border: none;
-    color:black;
+    color:rgb(17, 17, 16);
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+.active{
+    color: rgb(110, 117, 109);
 }

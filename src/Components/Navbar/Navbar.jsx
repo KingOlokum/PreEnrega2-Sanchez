@@ -1,31 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import './style.css';
+import { Link, NavLink } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
+
 
 
 const Navbar = () =>{
+    const {setTheme} = useContext(ThemeContext);
+    const {productQuantity} = useContext(CartContext);
+
     return(
                 <div className='navbar-container'>
-            <h1 className='logo'>Logo</h1>
+                    <Link to = {'/'}>
+                    <h1 className='logo'>Logo</h1>   
+                    </Link>
             <nav>
                 <ul className='list-container'>
                     <li>
-                        <Link to={'/category/electronics'} className='category-button'>Electronica</Link>
+                        <NavLink activeclassname="active" to={'/category/electronics'} className='category-button'>Electronica</NavLink>
                     </li>
                     <li>
-                        <Link to={'/category/jewelery'} className='category-button'>Joyeria</Link>
+                        <NavLink activeclassname="active" to={'/category/jewelery'} className='category-button'>Joyeria</NavLink>
                     </li>
                     <li>
-                        <Link to={"/category/men's-clothing"} className='category-button'>Ropa de Hombre</Link>
+                        <NavLink activeclassname="active" to={"/category/men's-clothing"} className='category-button'>Ropa de Hombre</NavLink>
                     </li>
                     <li>
-                        <Link to={"/category/women's-clothing"} className='category-button'>Ropa de Mujer</Link>
+                        <NavLink activeclassname="active" to={"/category/women's-clothing"} className='category-button'>Ropa de Mujer</NavLink>
                     </li>
                     
                 </ul>
+             
                 
             </nav>
-            
+            <Link to={'/cart'}>
+            <h3>Productos en el carrito: {productQuantity}</h3>
+            </Link>
         </div>
 
     );
